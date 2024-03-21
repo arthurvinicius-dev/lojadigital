@@ -42,8 +42,13 @@ public class ClienteDAO implements ClienteDAOInterface {
 
     // Método para remover um cliente pelo ID
     @Override
-    public void removeCliente(int id) {
-        listaDeClientes.removeIf(cliente -> cliente.getId() == id); // Remove o cliente se encontrado na lista
+    public boolean removeCliente(int id) {
+        Optional<Cliente> clienteOptional = buscaCliente(id);
+        if (clienteOptional.isPresent()) {
+             listaDeClientes.remove(clienteOptional.get()); // Remove o cliente se encontrado na lista
+             return true;
+        }
+       return false;
     }
 
     public List<Cliente> getClientes() {

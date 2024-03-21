@@ -97,8 +97,8 @@ public class ClienteService implements ClienteServiceInterface {
     @Override
     public boolean removeCliente(int id) {
         // Implementação para remover um cliente pelo ID
-        clienteDAO.removeCliente(id);
-        return true; // ou false dependendo da lógica de negócios
+        boolean clienteRemovido = clienteDAO.removeCliente(id);
+        return clienteRemovido; 
     }
 
     // Métodos para validar os campos do cliente

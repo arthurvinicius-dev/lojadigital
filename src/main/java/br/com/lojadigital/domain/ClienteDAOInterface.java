@@ -14,5 +14,5 @@ public interface ClienteDAOInterface {
 
     Optional<Cliente> buscaCliente(int id);// Busca Cliente
 
-    void removeCliente(int id);// Remove Cliente
+    boolean removeCliente(int id);// Remove Cliente
 }
